@@ -9,7 +9,7 @@ A dark-themed, pixelated landing page for the fictional retro arcade shoot 'em u
 - **Pixelact UI** components ported to JSX (button, card, input, badge, alert, accordion)
 - **Aceternity UI**-inspired effects (Spotlight, BackgroundGrid, MovingBorder, TextGenerate, Marquee)
 - **Framer Motion** for the moving border and word-by-word fade-in
-- **lucide-react** for icons
+- **lucide-react** fo r icons
 - A custom canvas-based **starfield** + pure-SVG **pixel ship** sprites
 
 Designed to look great at 320px — and ship-ready for Vercel or Netlify.
