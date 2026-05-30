@@ -2,7 +2,7 @@
 
 A dark-themed, pixelated landing page for the fictional retro arcade shoot 'em up **SUPERPLANE**. Built with:
 
-- **Vite 5** (JavaScript, no TypeScript)
+- **Vite 5** (JavaScript, no TypeScript) 
 - **React 18**
 - **Tailwind CSS 3.4**
 - **shadcn/ui** styling primitives (cn, cva, Radix Slot)
