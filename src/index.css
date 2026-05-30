@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- Pixelact UI core tokens (ported from official styles.css) ---------- */
+@layer base {
+  :root {
+    /* Light theme defaults (we render dark by default; kept for reference) */
+    --background: 240 10% 98%;
+    --foreground: 240 10% 6%;
+    --card: 240 10% 99%;
+    --card-foreground: 240 10% 6%;
+    --primary: 322 90% 58%;
+    --primary-foreground: 240 10% 6%;
+    --secondary: 240 6% 90%;
+    --secondary-foreground: 240 10% 6%;
+    --muted: 240 6% 92%;
+    --muted-foreground: 240 6% 35%;
+    --accent: 188 95% 56%;
+    --accent-foreground: 240 10% 6%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 95% 55%;
+    --warning-foreground: 240 10% 6%;
+    --border: 240 6% 82%;
+    --input: 240 6% 88%;
+    --ring: 188 95% 56%;
+
+    --box-shadow-width: 4px;
+    --pixel-box-shadow:
+      calc(-1 * (var(--box-shadow-width))) 0 0 0 black,
+      var(--box-shadow-width) 0 0 0 black,
+      0 var(--box-shadow-width) 0 0 black,
+      0 calc(-1 * (var(--box-shadow-width))) 0 0 black;
+    --pixel-box-shadow-destructive:
+      calc(-1 * (var(--box-shadow-width))) 0 0 0 hsl(var(--destructive)),
+      var(--box-shadow-width) 0 0 0 hsl(var(--destructive)),
+      0 var(--box-shadow-width) 0 0 hsl(var(--destructive)),
+      0 calc(-1 * (var(--box-shadow-width))) 0 0 hsl(var(--destructive));
+    --default-inner-border-color: rgb(200, 200, 200);
+  }
+
+  .dark {
+    /* Deep dark theme tuned for a CRT/arcade vibe */
+    --background: 232 30% 5%;
+    --foreground: 200 15% 92%;
+    --card: 232 32% 8%;
+    --card-foreground: 200 15% 92%;
+    --primary: 322 100% 60%;
+    --primary-foreground: 232 30% 5%;
+    --secondary: 232 20% 14%;
+    --secondary-foreground: 200 15% 92%;
+    --muted: 232 20% 12%;
+    --muted-foreground: 232 10% 65%;
+    --accent: 188 100% 56%;
+    --accent-foreground: 232 30% 5%;
+    --destructive: 0 90% 62%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 80% 52%;
+    --success-foreground: 232 30% 5%;
+    --warning: 38 100% 58%;
+    --warning-foreground: 232 30% 5%;
+    --border: 232 22% 20%;
+    --input: 232 22% 18%;
+    --ring: 188 100% 56%;
+
+    --pixel-box-shadow:
+      calc(-1 * (var(--box-shadow-width))) 0 0 0 hsl(var(--ring)),
+      var(--box-shadow-width) 0 0 0 hsl(var(--ring)),
+      0 var(--box-shadow-width) 0 0 hsl(var(--ring)),
+      0 calc(-1 * (var(--box-shadow-width))) 0 0 hsl(var(--ring));
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html,
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: "Inter", system-ui, sans-serif;
+  }
+
+  body {
+    background-image:
+      radial-gradient(ellipse 60% 40% at 50% 0%, hsl(var(--primary) / 0.10), transparent 60%),
+      radial-gradient(ellipse 50% 40% at 85% 80%, hsl(var(--accent) / 0.08), transparent 60%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+
+  /* Crisp pixel rendering for img tags */
+  img.pixel,
+  .pixel img {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+  }
+}
+
+/* ---------- Pixel utilities ---------- */
+@layer utilities {
+  .pixel-font {
+    font-family: "Press Start 2P", system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+  }
+
+  .arcade-font {
+    font-family: "VT323", ui-monospace, monospace;
+    letter-spacing: 1px;
+  }
+
+  .box-shadow-margin {
+    margin: var(--box-shadow-width);
+  }
+
+  .pixel-shadow {
+    box-shadow: var(--pixel-box-shadow);
+  }
+
+  .pixel-shadow-destructive {
+    box-shadow: var(--pixel-box-shadow-destructive);
+  }
+
+  /* Subtle CRT scanlines */
+  .scanlines::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      to bottom,
+      hsl(var(--background) / 0) 0,
+      hsl(var(--background) / 0) 2px,
+      hsl(var(--foreground) / 0.04) 3px,
+      hsl(var(--background) / 0) 4px
+    );
+    mix-blend-mode: overlay;
+    z-index: 1;
+  }
+
+  .text-shadow-glow {
+    text-shadow:
+      0 0 6px hsl(var(--accent) / 0.5),
+      0 0 18px hsl(var(--accent) / 0.35);
+  }
+
+  .text-shadow-pink {
+    text-shadow:
+      0 0 6px hsl(var(--primary) / 0.55),
+      0 0 18px hsl(var(--primary) / 0.35);
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(to right, hsl(var(--border) / 0.45) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.45) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .dot-bg {
+    background-image: radial-gradient(
+      hsl(var(--ring) / 0.30) 1px,
+      transparent 1px
+    );
+    background-size: 18px 18px;
+  }
+
+  .shimmer-text {
+    background: linear-gradient(
+      110deg,
+      hsl(var(--foreground)) 0%,
+      hsl(var(--accent)) 30%,
+      hsl(var(--primary)) 55%,
+      hsl(var(--foreground)) 80%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 4s linear infinite;
+  }
+
+  .clip-pixel-corners {
+    clip-path: polygon(
+      0 8px, 4px 8px, 4px 4px, 8px 4px, 8px 0,
+      calc(100% - 8px) 0, calc(100% - 8px) 4px, calc(100% - 4px) 4px,
+      calc(100% - 4px) 8px, 100% 8px,
+      100% calc(100% - 8px), calc(100% - 4px) calc(100% - 8px),
+      calc(100% - 4px) calc(100% - 4px), calc(100% - 8px) calc(100% - 4px),
+      calc(100% - 8px) 100%, 8px 100%, 8px calc(100% - 4px),
+      4px calc(100% - 4px), 4px calc(100% - 8px), 0 calc(100% - 8px)
+    );
+  }
+}
