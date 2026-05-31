@@ -14,7 +14,7 @@ A dark-themed, pixelated landing page for the fictional retro arcade shoot 'em u
 
 Designed to look great at 320px — and ship-ready for Vercel or Netlify.
 
-
+ 
 
 
 
