@@ -1,6 +1,6 @@
 # SUPERPLANE — Pixel Arcade Landing 
 
-A dark-themed, pixelated landing page for the fictional retro arcade shoot 'em up **SUPERPLANE**. Built with:
+A dark-themed, pixelated  landing page for the fictional retro arcade shoot 'em up **SUPERPLANE**. Built with:
 
 - **Vite 5** (JavaScript, no TypeScript)
 - **React 18**
