@@ -106,4 +106,4 @@ All colors are HSL CSS variables in `src/index.css` under `.dark` (which is set 
 - **Aceternity UI** components are likewise ported to JSX, using `framer-motion` for the animated bits.
 - **shadcn/ui** is present as a *pattern* (forwardRef components + `cva` variants + `cn` merger), not as a runtime dependency — keeps the bundle tiny.
 
-- this is the new change
+- this is the new change that we made just now
