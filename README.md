@@ -12,7 +12,7 @@ A dark-themed, pixelated landing page for the fictional retro arcade shoot 'em u
 - **lucide-react** fo r icons
 - A custom canvas-based **starfield** + pure-SVG **pixel ship** sprites
 
-Designed to look great at 320px — and ship-ready for Vercel or Netlify.
+Designed to look great at 320px — and ship -ready for Vercel or Netlify.
 
  
 
