@@ -5,7 +5,7 @@ A dark-themed, pixelated landing page for the fictional retro arcade shoot 'em u
 - **Vite 5** (JavaScript, no TypeScript)
 - **React 18**
 - **Tailwind CSS 3.4**
-- **shadcn/ui** styling primitives (cn, cva, Radix Slot)
+- **shadcn/ui** styling primitives (cn, cva, Radix Slot) 
 - **Pixelact UI** components ported to JSX (button, card, input, badge, alert, accordion)
 - **Aceternity UI**-inspired effects (Spotlight, BackgroundGrid, MovingBorder, TextGenerate, Marquee)
 - **Framer Motion** for the moving border and word-by-word fade-in
