@@ -105,3 +105,4 @@ All colors are HSL CSS variables in `src/index.css` under `.dark` (which is set 
 - **Pixelact UI**'s official registry installs `.tsx` files via `npx shadcn add`. Since this project is JavaScript-only, the components are hand-ported to `.jsx`, preserving the exact CSS box-shadow trick that creates the pixelated borders (see `src/components/ui/pixel/styles.css`).
 - **Aceternity UI** components are likewise ported to JSX, using `framer-motion` for the animated bits.
 - **shadcn/ui** is present as a *pattern* (forwardRef components + `cva` variants + `cn` merger), not as a runtime dependency — keeps the bundle tiny.
+- adding new changes
